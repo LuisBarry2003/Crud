@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD SAUA</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #495057;
+    }
+    .container {
+      max-width: 800px;
+    }
+    h1 {
+      color: #000000;
+      text-align: center;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .btn-primary,
+    .btn-success,
+    .btn-info,
+    .btn-secondary {
+      margin-right: 10px;
+    }
+    .table th,
+    .table td {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Firebase Firestore CRUD</h1>
+
+    <form id="userForm">
+      <input type="hidden" id="userId">
+      <div class="form-group">
+        <label for="nombre">Nombre/s</label>
+        <input type="text" class="form-control" id="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="ap">Apellidos</label>
+        <input type="text" class="form-control" id="ap" required>
+      </div>
+      <div class="form-group">
+        <label for="grupo">Grupo</label>
+        <input type="text" class="form-control" id="grupo" required>
+      </div>
+      <div class="form-group">
+        <label for="programa">Programa Educativo</label>
+        <input type="text" class="form-control" id="programa" required>
+      </div>
+      <div class="form-group">
+        <label for="unidad">Unidad de Aprendizaje</label>
+        <input type="text" class="form-control" id="unidad" required>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo</label>
+        <input type="text" id="correo" class="form-control" disabled>
+    </div>
+      <div class="form-group">
+        <label for="cel">Teléfono</label>
+        <input type="text" class="form-control" id="cel" required>
+      </div>
+      <button type="button" class="btn btn-outline-info" id="inser">Insertar</button>
+      <button type="button" class="btn btn-outline-info" id="Edit">Actualizar Datos</button>
+      <button type="button" class="btn btn-outline-info" id="consu">Consultar Datos</button>
+      <button type="button" class="btn btn-outline-info" id="limpiar">Limpiar campos</button>
+    </form>
+    
+    <table class="table table-bordered mt-4">
+      <thead class="thead-light">
+        <tr>
+          <th>Matrícula</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Grupo</th>
+          <th>Programa Educativo</th>
+          <th>Unidad de Aprendizaje</th>
+        </tr>
+      </thead>
+      <tbody id="tbUsuarios">
+      </tbody>
+    </table>
+  </div>
+
+  <script type="module" src="insert.js"></script>
+</body>
+</html>

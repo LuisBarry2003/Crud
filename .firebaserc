@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "formulario-51fdd",
+    "Formulario": "formulario-51fdd"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
